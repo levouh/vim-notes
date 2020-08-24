@@ -40,7 +40,7 @@
     " of what tasks are "TODO", see above
     command! -nargs=* ToggleTodo call notes#toggle_todo(<q-args>)
 
-    if executable('fzf') && exists('g:notes_dir') && isdirectory(g:notes_dir)
+    if executable('fzf') && exists('g:notes_dir') && isdirectory(expand(g:notes_dir))
         " Edit a particular notes file, determined by note-based
         " settings for the base directory to search from
         command! -bang Note call fzf#vim#files(g:notes_dir,
