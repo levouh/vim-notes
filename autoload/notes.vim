@@ -15,7 +15,7 @@ fu! notes#get_todo(current, ...) abort " {{{1
 
     " Only search for an '~' character if just looking for current
     " tasks
-    let marker = a:current is# v:true ? '~' : '\-|~'
+    let marker = a:current is# v:true ? '\~' : '\-|\~'
 
     " Identifier for a todo item
     let pat = '\[(' .. marker .. ')\]'
@@ -171,18 +171,20 @@ fu! s:get_todo_file() " {{{1
         echoerr 'ERROR: No "g:notes_dir" variable setup' | return v:none
     endif
 
-    if !isdirectory(g:notes_dir)
-        echoerr 'ERROR: No "' .. g:notes_dir .. '" directory found' | return v:none
+    let notes_dir = expand(g:notes_dir)
+
+    if !isdirectory(notes_dir)
+        echoerr 'ERROR: No "' .. notes_dir .. '" directory found' | return v:none
     endif
 
-    if !exists('g:_notes_todo_file')
-        echoerr 'ERROR: No "g:_notes_todo_file" variable setup' | return v:none
+    if !exists('g:notes_todo_file')
+        echoerr 'ERROR: No "g:notes_todo_file" variable setup' | return v:none
     endif
 
     "                             ┌ should just be a directory
     "                             │
     "                             │
-    let l:todo_file = simplify(g:notes_dir .. '/' .. g:notes_todo_file .. g:notes_extension)
+    let l:todo_file = simplify(notes_dir .. '/' .. g:notes_todo_file .. g:notes_extension)
     "                                                    │
     "                                                    │
     "                                                    └ the file withinn this directory

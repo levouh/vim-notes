@@ -54,17 +54,8 @@
     " found in the "g:_notes_dir" directory if it exists
     nnoremap <silent> <leader>n :Note<CR>
 
-    " While editing the file defined by:
-    "   g:_notes_dir .. '/' .. g:_notes_task_file
-    " toggle the "TODO" status of the item on the current line.
+    " While editing the file defined by, toggle the 'TODO'
+    " status of the item on the current line.
     nnoremap <silent> <leader>- :ToggleTodo -<CR>
     nnoremap <silent> <leader>x :ToggleTodo ~<CR>
     nnoremap <silent> <leader><Space> :ToggleTodo<CR>
-
-" Highlights {{{1
-
-    hi! NtTag ctermfg=242 ctermbg=NONE guifg=#1E1E1E guibg=NONE cterm=NONE
-
-    hi! NtNow ctermfg=255 ctermbg=NONE guifg=#F0F0F0 guibg=NONE cterm=NONE
-    hi! NtSoon ctermfg=246 ctermbg=NONE guifg=#7C7C7C guibg=NONE cterm=NONE
-    hi! NtLater ctermfg=242 ctermbg=NONE guifg=#1E1E1E guibg=NONE cterm=NONE
