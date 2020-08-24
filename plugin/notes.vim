@@ -61,3 +61,10 @@
     nnoremap <silent> <leader>x :ToggleTodo ~<CR>
     nnoremap <silent> <leader><Space> :ToggleTodo<CR>
 
+" Highlights {{{1
+
+    hi! NtTag ctermfg=242 ctermbg=NONE guifg=#1E1E1E guibg=NONE cterm=NONE
+
+    hi! NtNow ctermfg=255 ctermbg=NONE guifg=#F0F0F0 guibg=NONE cterm=NONE
+    hi! NtSoon ctermfg=246 ctermbg=NONE guifg=#7C7C7C guibg=NONE cterm=NONE
+    hi! NtLater ctermfg=242 ctermbg=NONE guifg=#1E1E1E guibg=NONE cterm=NONE

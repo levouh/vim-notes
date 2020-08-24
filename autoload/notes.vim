@@ -182,7 +182,7 @@ fu! s:get_todo_file() " {{{1
     "                             ┌ should just be a directory
     "                             │
     "                             │
-    let l:todo_file = simplify(g:notes_dir .. '/' .. g:notes_todo_file)
+    let l:todo_file = simplify(g:notes_dir .. '/' .. g:notes_todo_file .. g:notes_extension)
     "                                                    │
     "                                                    │
     "                                                    └ the file withinn this directory
