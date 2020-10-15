@@ -48,14 +48,3 @@
                     \ <bang>0)
     endif
 
-" Mappings {{{1
-
-    " Edit a notes file, which are defined as any files
-    " found in the "g:_notes_dir" directory if it exists
-    nnoremap <silent> <leader>n :Note<CR>
-
-    " While editing the file defined by, toggle the 'TODO'
-    " status of the item on the current line.
-    nnoremap <silent> <leader>- :ToggleTodo -<CR>
-    nnoremap <silent> <leader>x :ToggleTodo ~<CR>
-    nnoremap <silent> <leader><Space> :ToggleTodo<CR>

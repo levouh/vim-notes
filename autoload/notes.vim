@@ -109,12 +109,6 @@ fu! notes#new_task() " {{{1
         return
     endif
 
-    " The tasks file is returned relative to the root directory,
-    " so do the same for the name of the current buffer
-    if fnamemodify(bufname(), ":p") != l:task_file
-        echoerr 'ERROR: Not in "' .. l:task_file .. '" file!' | return
-    endif
-
     " Have the user enter tags for the task
     let l:tags = map(
             \ split(input('Enter tags for new task: '), ' '),
@@ -133,12 +127,6 @@ fu! notes#toggle_todo(...) " {{{1
 
     if l:task_file is# v:none
         return
-    endif
-
-    " The tasks file is returned relative to the root directory,
-    " so do the same for the name of the current buffer
-    if fnamemodify(bufname(), ":p") != l:task_file
-        echoerr 'ERROR: Not in "' .. l:task_file .. '" file!' | return
     endif
 
     let l:cur_line = getline('.')
@@ -164,6 +152,7 @@ fu! notes#toggle_todo(...) " {{{1
     "                                                                  │
     "                                 keep whitespace from group match ┘
 endfu
+
 fu! s:get_todo_file() " {{{1
     " Return the string absolute path to the configured notes file,
     " or return "v:none" on an error
